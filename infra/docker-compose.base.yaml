@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: netflix-like-container
+    environment:
+      POSTGRES_DB: netflix-like
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5438:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d netflix-like"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - netflix-like_pg_data:/var/lib/postgresql/data
+
+volumes:
+  netflix-like_pg_data:
