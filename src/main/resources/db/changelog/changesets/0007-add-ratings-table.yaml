@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0007-add-ratings
+      author: OMAR
+      changes:
+        - createTable:
+            tableName: ratings
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: movie_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: stars
+                  type: INTEGER
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: true
+
+
+        - addForeignKeyConstraint:
+            baseTableName: ratings
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_ratings_user
+
+        - addForeignKeyConstraint:
+            baseTableName: ratings
+            baseColumnNames: movie_id
+            referencedTableName: movies
+            referencedColumnNames: id
+            constraintName: fk_ratings_movie
+
+        - addUniqueConstraint:
+            tableName: ratings
+            columnNames: user_id, movie_id
+            constraintName: uk_ratings_user_movie
