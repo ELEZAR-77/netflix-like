@@ -2,8 +2,13 @@ spring:
   application:
     name: netflix-like
 
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 120MB
+
   datasource:
-    url: jdbc:postgresql://localhost:5438/netflix-like
+    url: jdbc:postgresql://localhost:5438/netflix-like?sslmode=disable
     username: postgres
     password: postgres
 
