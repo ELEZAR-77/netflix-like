@@ -3,3 +3,15 @@ databaseChangeLog:
       file: db/changelog/changesets/0001-start-baseline.yaml
   - include:
       file: db/changelog/changesets/0002-add-user-table.yaml
+  - include:
+      file: db/changelog/changesets/0003-add-movies-table.yaml
+  - include:
+      file: db/changelog/changesets/0004-add-genre-table.yaml
+  - include:
+      file: db/changelog/changesets/0005-add-movie_genres-table.yaml
+  - include:
+      file: db/changelog/changesets/0006-add-favorites-table.yaml
+  - include:
+      file: db/changelog/changesets/0007-add-ratings-table.yaml
+  - include:
+      file: db/changelog/changesets/0008-add-watch_history-table.yaml
