@@ -1,4 +1,4 @@
-package com.elezar.netflixlike.dto;
+package com.elezar.netflixlike.genre_module.dto;
 
 import com.elezar.netflixlike.movie_module.dto.MovieDomain;
 import com.elezar.netflixlike.movie_module.dto.MovieResponseDto;

@@ -1,7 +1,6 @@
 package com.elezar.netflixlike.movie_module.dto;
 
-import com.elezar.netflixlike.dto.GenreDomain;
-import com.elezar.netflixlike.dto.GenreResponseDto;
+import com.elezar.netflixlike.genre_module.dto.GenreResponseDto;
 
 import java.time.Instant;
 import java.time.LocalDate;

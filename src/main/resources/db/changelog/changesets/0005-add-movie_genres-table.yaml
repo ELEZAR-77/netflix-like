@@ -16,6 +16,7 @@ databaseChangeLog:
                   type: BIGINT
                   constraints:
                     nullable: false
+
         - addPrimaryKey:
             tableName: movie_genres
             columnNames: movie_id, genre_id
